@@ -1,6 +1,6 @@
 import pytest
 
-from dijkstra_algorithm.dijkstra import dijkstra_shortest_path
+from src.dijkstra_algorithm.dijkstra import dijkstra_shortest_path
 
 def test_dijkstra_simple():
     graph = [
