@@ -1,0 +1,1 @@
+Quick implementation of Dijkstra's algorithm in Python (works with adjacency matrices). Might add Bellman-Ford in the future.
