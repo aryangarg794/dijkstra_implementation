@@ -5,16 +5,22 @@ def dijkstra_shortest_path(graph, source):
     for vertex in range(n):
         if vertex != source:
             paths[vertex] = float('inf')
+    
     while unvisited:
         # select the shortest path vertext
-        curr = 0
-        temp = float('inf')
-        for vertex in unvisited:
-            if temp > paths[vertex]:
-                curr = vertex
-            temp = paths[vertex]
-        unvisited.remove(curr)
+        curr = None
+        last = float('inf')
 
+        for vertex in unvisited:
+            if paths[vertex] < last:
+                curr = vertex
+                last = paths[vertex]
+        
+        if curr is None:
+            break
+        
+        unvisited.remove(curr)
+        
         # calculate the distance from curr to each neighbour
         for vertex in unvisited:
             if graph[curr][vertex] != 0:
